@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>w7nx_z - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        /* Temporary image placeholders */
+        .image-placeholder {
+            background: linear-gradient(135deg, rgba(0, 255, 159, 0.2), rgba(0, 184, 255, 0.2));
+            border: 1px dashed var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            color: var(--text-light);
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+        }
+        
+        .image-placeholder i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .image-placeholder p {
+            font-size: 14px;
+            opacity: 0.8;
+            max-width: 80%;
+        }
+        
+        .hero-image .image-placeholder {
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+        }
+        
+        .featured-project .image-placeholder {
+            height: 300px;
+            width: 100%;
+            border-radius: 0;
+        }
+        
+        .skill-card .image-placeholder {
+            height: 60px;
+            width: 60px;
+            margin: 0 auto 15px;
+        }
+        
+        .project-card .image-placeholder {
+            height: 100%;
+            width: 100%;
+            aspect-ratio: 16/9;
+            border-radius: 0;
+        }
+        
+        .project-image {
+            height: 180px;
+            width: 100%;
+            border-radius: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0d121b;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .featured-main .project-image {
+            height: 300px;
+            border-radius: 0;
+        }
+        
+        .featured-project .project-image {
+            height: 300px;
+            width: 100%;
+            border-radius: 0;
+        }
+        
+        .project-card .project-image {
+            aspect-ratio: 16/9;
+            height: auto;
+        }
+        
+        /* Custom profile image */
+        .hacker-profile {
+            height: 400px;
+            width: 400px;
+            border-radius: 50%;
+            background-color: #1a2030;
+            position: relative;
+            border: 4px solid rgba(0, 245, 212, 0.3);
+            box-shadow: 0 0 30px rgba(0, 245, 212, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .hacker-profile::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(20, 30, 50, 0.8), rgba(5, 15, 30, 0.9));
+            z-index: 1;
+        }
+        
+        .hacker-profile::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAwIDEwIEwgMjAgMTAgTSAxMCAwIEwgMTAgMjAiIHN0cm9rZT0iIzE4MjU0MCIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+');
+            opacity: 0.2;
+            z-index: 2;
+        }
+        
+        .hacker-profile-content {
+            z-index: 3;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hacker-profile-content i {
+            font-size: 80px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .hacker-profile-content h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+        
+        .hacker-profile-content p {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            letter-spacing: 8px;
+            font-weight: bold;
+        }
+        
+        .hero-profile-img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            filter: drop-shadow(0 0 20px rgba(0, 245, 212, 0.4));
+        }
+        
+        /* Navigation fixes */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            transition: background-color 0.3s ease;
+            background-color: rgba(13, 18, 27, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            padding: 8px 12px;
+            position: relative;
+            font-weight: 600;
+            color: var(--text-dim);
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-light);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        .tool-icon {
+            height: 80px;
+            width: 80px;
+            margin: 0 auto 15px;
+            border-radius: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0d121b;
+        }
+        
+        .tool-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .tool-icon .image-placeholder {
+            height: 100%;
+            width: 100%;
+            padding: 10px;
+            border-radius: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .tool-icon .image-placeholder i {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+        
+        .tool-icon .image-placeholder p {
+            font-size: 12px;
+            margin: 0;
+            text-align: center;
+            line-height: 1.2;
+        }
+        
+        /* Logo styling */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+            filter: drop-shadow(0 0 5px rgba(0, 245, 212, 0.4));
+            transition: all 0.3s ease;
+        }
+        
+        .logo img:hover {
+            filter: drop-shadow(0 0 8px rgba(0, 245, 212, 0.7));
+            transform: scale(1.05);
+        }
+        
+        .footer-logo {
+            margin-bottom: 15px;
+        }
+        
+        .footer-logo img {
+            height: 45px;
+            filter: drop-shadow(0 0 5px rgba(0, 245, 212, 0.3));
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="img/logo.svg" alt="w7nx_z Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>W7NX_Z</h1>
+                        <p>Specialized in network security, penetration testing, and security architecture</p>
+                        <div class="button-group">
+                            <a href="#projects" class="btn btn-primary">VIEW PROJECTS</a>
+                            <a href="#contact" class="btn btn-outline">CONTACT ME</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="hacker-profile">
+                            <div class="hacker-profile-content">
+                                <svg class="hero-profile-img" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Dark background with subtle gradient -->
+                                    <defs>
+                                        <radialGradient id="bg-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                                            <stop offset="0%" style="stop-color:#0c0f14; stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#050709; stop-opacity:1" />
+                                        </radialGradient>
+                                        <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                            <feGaussianBlur stdDeviation="8" result="blur" />
+                                            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                        </filter>
+                                        <linearGradient id="hoodie-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#121212; stop-opacity:1" />
+                                            <stop offset="100%" style="stop-color:#000000; stop-opacity:1" />
+                                        </linearGradient>
+                                    </defs>
+                                    
+                                    <!-- Circular background -->
+                                    <circle cx="300" cy="300" r="290" fill="url(#bg-gradient)" />
+                                    
+                                    <!-- Professional borders -->
+                                    <circle cx="300" cy="300" r="270" fill="none" stroke="#151515" stroke-width="1" stroke-opacity="0.6" />
+                                    <circle cx="300" cy="300" r="250" fill="none" stroke="#00f5d4" stroke-width="1" stroke-opacity="0.2" />
+                                    
+                                    <!-- Binary code background pattern -->
+                                    <g fill="none" stroke="#00f5d4" stroke-width="0.5" stroke-opacity="0.1">
+                                        <text x="120" y="160" font-family="monospace" font-size="8">01001000 01000001 01000011 01001011</text>
+                                        <text x="120" y="175" font-family="monospace" font-size="8">01000101 01010010 00100000 01000101</text>
+                                        <text x="120" y="190" font-family="monospace" font-size="8">01010100 01001000 01001001 01000011</text>
+                                        <text x="400" y="440" font-family="monospace" font-size="8">01010011 01000101 01000011 01010101</text>
+                                        <text x="400" y="455" font-family="monospace" font-size="8">01010010 01001001 01010100 01011001</text>
+                                    </g>
+                                    
+                                    <!-- Tech Grid pattern -->
+                                    <g fill="none" stroke="#111" stroke-width="0.5" stroke-opacity="0.3">
+                                        <path d="M150,300 H450 M300,150 V450" />
+                                        <circle cx="300" cy="300" r="120" />
+                                        <circle cx="300" cy="300" r="180" />
+                                    </g>
+
+                                    <!-- Circuit pattern elements -->
+                                    <g fill="none" stroke="#00f5d4" stroke-width="0.5" stroke-opacity="0.2">
+                                        <path d="M150,200 H200 V240 H230 V270 H270" />
+                                        <path d="M450,200 H400 V240 H370 V270 H330" />
+                                        <circle cx="200" cy="200" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                        <circle cx="230" cy="240" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                        <circle cx="270" cy="270" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                        <circle cx="400" cy="200" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                        <circle cx="370" cy="240" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                        <circle cx="330" cy="270" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                    </g>
+                                    
+                                    <!-- Professional Black Hoodie silhouette -->
+                                    <path d="M300,140 
+                                             C365,140 420,180 430,230
+                                             C435,255 435,280 430,305
+                                             L450,410 L390,438 L365,380
+                                             C345,410 325,425 300,430
+                                             C275,425 255,410 235,380
+                                             L210,438 L150,410 L170,305
+                                             C165,280 165,255 170,230
+                                             C180,180 235,140 300,140 Z" 
+                                          fill="url(#hoodie-gradient)" stroke="#222" stroke-width="2" stroke-opacity="0.8" />
+                                    
+                                    <!-- Anonymous mask face -->
+                                    <g>
+                                        <!-- Hood outline with mask integration -->
+                                        <path d="M255,235 
+                                                 C255,200 275,180 300,180
+                                                 C325,180 345,200 345,235
+                                                 C345,270 325,290 300,290
+                                                 C275,290 255,270 255,235 Z" 
+                                              fill="#000000" stroke="#333" stroke-width="1" stroke-opacity="0.7" />
+                                        
+                                        <!-- Mask shape -->
+                                        <path d="M270,235 
+                                                 C270,210 285,195 300,195
+                                                 C315,195 330,210 330,235
+                                                 C330,260 315,275 300,275
+                                                 C285,275 270,260 270,235 Z"
+                                              fill="#111" stroke="#222" stroke-width="0.5" />
+                                              
+                                        <!-- Mask details - eyes -->
+                                        <ellipse cx="285" cy="225" rx="10" ry="7" fill="#00f5d4" fill-opacity="0.4" stroke="#00f5d4" stroke-width="0.5" stroke-opacity="0.8" />
+                                        <ellipse cx="315" cy="225" rx="10" ry="7" fill="#00f5d4" fill-opacity="0.4" stroke="#00f5d4" stroke-width="0.5" stroke-opacity="0.8" />
+                                        
+                                        <!-- Mask details - mouth -->
+                                        <path d="M285,250 C290,258 310,258 315,250" fill="none" stroke="#222" stroke-width="1" />
+                                        
+                                        <!-- Shadow beneath mask -->
+                                        <ellipse cx="300" cy="235" rx="30" ry="35" fill="#000000" fill-opacity="0.3" />
+                                    </g>
+                                    
+                                    <!-- Hoodie zipper line -->
+                                    <path d="M300,290 V380" stroke="#444" stroke-width="1.5" stroke-opacity="0.8" />
+                                    <circle cx="300" cy="320" r="3" fill="#333" />
+                                    <circle cx="300" cy="350" r="3" fill="#333" />
+                                    
+                                    <!-- Professional accent lines -->
+                                    <path d="M250,310 H220 C210,310 205,315 205,325 V350" stroke="#444" stroke-width="1" stroke-opacity="0.8" fill="none" />
+                                    <path d="M350,310 H380 C390,310 395,315 395,325 V350" stroke="#444" stroke-width="1" stroke-opacity="0.8" fill="none" />
+                                    
+                                    <!-- Tech detail accents -->
+                                    <path d="M240,380 H360" stroke="#444" stroke-width="1" stroke-opacity="0.6" stroke-dasharray="2,2" />
+                                    <path d="M250,390 H350" stroke="#444" stroke-width="1" stroke-opacity="0.6" stroke-dasharray="2,2" />
+                                    
+                                    <!-- Hacker emblem on left chest -->
+                                    <g transform="translate(250, 320)">
+                                        <circle cx="0" cy="0" r="15" fill="#000000" stroke="#444" stroke-width="1" stroke-opacity="0.9" />
+                                        <path d="M-8,-2 L-3,8 L0,0 L3,8 L8,-2" stroke="#00f5d4" stroke-width="1" stroke-opacity="0.8" fill="none" />
+                                        <circle cx="0" cy="0" r="3" fill="#00f5d4" fill-opacity="0.5" />
+                                    </g>
+                                    
+                                    <!-- Lock icon on right chest -->
+                                    <g transform="translate(350, 320)">
+                                        <circle cx="0" cy="0" r="12" fill="#000000" stroke="#333" stroke-width="0.5" />
+                                        <path d="M-5,-2 V-7 A5,5 0 0,1 5,-7 V-2" fill="none" stroke="#00f5d4" stroke-width="1" stroke-opacity="0.6" />
+                                        <rect x="-5" y="-2" width="10" height="8" rx="1" fill="#111" stroke="#00f5d4" stroke-width="0.5" stroke-opacity="0.6" />
+                                        <circle cx="0" cy="2" r="1" fill="#00f5d4" fill-opacity="0.6" />
+                                    </g>
+                                    
+                                    <!-- Name styling with professional typography -->
+                                    <g filter="url(#glow)">
+                                        <text x="300" y="490" fill="#00f5d4" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" letter-spacing="3">W7NX_Z</text>
+                                        <text x="300" y="525" fill="#00f5d4" font-family="monospace" font-size="16" font-weight="normal" text-anchor="middle" letter-spacing="5">CYBERSECURITY</text>
+                                    </g>
+                                    
+                                    <!-- Professional decorative elements -->
+                                    <path d="M220,490 H260 M340,490 H380" stroke="#00f5d4" stroke-width="1" stroke-opacity="0.4" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <span class="mouse">
+                        <span class="wheel"></span>
+                    </span>
+                    <p>Scroll Down</p>
+                </div>
+            </section>
+
+            <section class="services" id="services">
+                <div class="section-title">
+                    <h2>Expert Services</h2>
+                    <p>Comprehensive cybersecurity solutions to protect your digital assets</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Penetration Testing</h3>
+                            <p>Comprehensive testing to identify security vulnerabilities in networks and applications.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Web App Security</h3>
+                            <p>In-depth analysis of web applications to discover and remediate security flaws.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Network Security</h3>
+                            <p>Securing network infrastructure against unauthorized access and cyber threats.</p>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bug"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Vulnerability Assessment</h3>
+                            <p>Systematic review of security weaknesses in systems and networks.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-project">
+                <div class="container">
+                    <div class="project-showcase">
+                        <div class="project-info">
+                            <h2>Featured <span>Project</span></h2>
+                            <p>An automated security audit framework designed to identify vulnerabilities in web applications. This tool combines static analysis, dynamic testing, and API security validation to provide comprehensive security assessments.</p>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">API Security</span>
+                                <span class="tag">OWASP Top 10</span>
+                            </div>
+                            <a href="projects.html" class="btn btn-outline">VIEW DETAILS</a>
+                        </div>
+                        <div class="project-image">
+                            <img src="img/projects/security-audit-framework.svg" alt="Security Audit Framework" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-terminal\'></i><h3>Security Audit Framework</h3><p>Add your terminal screenshot with vulnerability scan output as project1.jpg here (900x500px)</p></div>';">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="featured-projects section">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Featured Projects</h2>
+                        <p>Explore my most impactful cybersecurity projects and solutions</p>
+                    </div>
+                    
+                    <div class="featured-main">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="featured-content">
+                                    <span class="featured-tag">FEATURED PROJECT</span>
+                                    <h3>Security Audit Framework</h3>
+                                    <p>A comprehensive framework for conducting security audits across various systems and networks. Identifies vulnerabilities, compliance issues, and provides actionable remediation steps with severity rankings.</p>
+                                    <div class="tech-stack">
+                                        <span>Python</span>
+                                        <span>Bash</span>
+                                        <span>OWASP</span>
+                                        <span>Docker</span>
+                                    </div>
+                                    <div class="button-group">
+                                        <a href="#" class="btn btn-primary">View Project</a>
+                                        <a href="#" class="btn btn-outline">Source Code</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="project-image">
+                                    <img src="img/projects/security-audit-framework.svg" alt="Security Audit Framework" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-shield-alt\'></i><h3>Security Audit Framework</h3><p>Replace with a screenshot of the Security Audit Framework dashboard or report interface</p></div>';">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-grid mt-5">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <img src="img/projects/network-intrusion.svg" alt="Network Intrusion Detection System" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-network-wired\'></i><h3>Project Image</h3><p>Network monitoring dashboard visualization</p></div>';">
+                                    </div>
+                                    <div class="project-content">
+                                        <h3>Network Intrusion Detection System</h3>
+                                        <p>Custom-built IDS solution with machine learning capabilities to detect anomalous network behavior and potential intrusions.</p>
+                                        <div class="tech-stack">
+                                            <span>Python</span>
+                                            <span>TensorFlow</span>
+                                            <span>Wireshark</span>
+                                        </div>
+                                        <a href="#" class="btn btn-outline btn-sm">DETAILS</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <img src="img/projects/secure-code-review.svg" alt="Secure Code Review Tool" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-code\'></i><h3>Project Image</h3><p>Code analysis visualization</p></div>';">
+                                    </div>
+                                    <div class="project-content">
+                                        <h3>Secure Code Review Tool</h3>
+                                        <p>Automated tool for identifying security vulnerabilities in source code with support for multiple programming languages.</p>
+                                        <div class="tech-stack">
+                                            <span>JavaScript</span>
+                                            <span>Node.js</span>
+                                            <span>AST</span>
+                                        </div>
+                                        <a href="#" class="btn btn-outline btn-sm">DETAILS</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4">
+                                <div class="project-card">
+                                    <div class="project-image">
+                                        <img src="img/projects/password-security.svg" alt="Password Security Analyzer" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-key\'></i><h3>Project Image</h3><p>Password strength visualization</p></div>';">
+                                    </div>
+                                    <div class="project-content">
+                                        <h3>Password Security Analyzer</h3>
+                                        <p>Tool for analyzing password strength, identifying common patterns, and detecting compromised credentials from data breach databases.</p>
+                                        <div class="tech-stack">
+                                            <span>Python</span>
+                                            <span>API</span>
+                                            <span>Cryptography</span>
+                                        </div>
+                                        <a href="#" class="btn btn-outline btn-sm">DETAILS</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-5">
+                        <a href="projects.html" class="btn btn-primary">View All Projects</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tools-section section">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Tools & Technologies</h2>
+                        <p>Professional-grade security tools I use for comprehensive cybersecurity assessments</p>
+                    </div>
+                    
+                    <div class="tools-grid">
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <img src="img/tools/kali-linux.svg" alt="Kali Linux" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-dragon\'></i><p>Kali Linux</p></div>';">
+                            </div>
+                            <p>Advanced penetration testing Linux distribution with over 600 security tools</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <img src="img/tools/burp-suite.svg" alt="Burp Suite" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-spider\'></i><p>Burp Suite</p></div>';">
+                            </div>
+                            <p>Professional web vulnerability scanner and security testing toolkit</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <img src="img/tools/wireshark.svg" alt="Wireshark" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-network-wired\'></i><p>Wireshark</p></div>';">
+                            </div>
+                            <p>Network protocol analyzer for detailed packet inspection and analysis</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <img src="img/tools/metasploit.svg" alt="Metasploit" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-bug\'></i><p>Metasploit</p></div>';">
+                            </div>
+                            <p>Extensive exploitation framework for security testing and validation</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <img src="img/tools/nmap.svg" alt="Nmap" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-search\'></i><p>Nmap</p></div>';">
+                            </div>
+                            <p>Vulnerability scanner with 10,000+ vulnerability checks and assessment tools</p>
+                        </div>
+                        
+                        <div class="tool-card">
+                            <div class="tool-icon">
+                                <img src="img/tools/sqlmap.svg" alt="SQLMap" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'image-placeholder\'><i class=\'fas fa-database\'></i><p>SQLMap</p></div>';">
+                            </div>
+                            <p>Automated SQL injection detection and exploitation tool</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="contact" id="contact">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Get In Touch</h2>
+                        <p>Have a project in mind? Let's discuss how I can help.</p>
+                    </div>
+                    <div class="contact-container">
+                        <div class="contact-info">
+                            <h3>Contact Information</h3>
+                            <p>Feel free to reach out for cybersecurity projects, consulting, or just to chat about the latest security trends.</p>
+                            <div class="contact-details">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <p>rudyhacks@gmail.com</p>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <p>Ahmedabad, Gujarat, India</p>
+                                </div>
+                            </div>
+                            <div class="social-links">
+                                <a href="https://instagram.com/w7nx_z" target="_blank"><i class="fab fa-instagram"></i></a>
+                                <a href="https://linkedin.com/in/rudy-hacks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="contact-form">
+                            <form id="contact-form">
+                                <div class="form-group">
+                                    <input type="text" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" placeholder="Your Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" id="subject" placeholder="Subject">
+                                </div>
+                                <div class="form-group">
+                                    <textarea id="message" placeholder="Your Message" required></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <img src="img/logo.svg" alt="w7nx_z Logo">
+                        </div>
+                        <p>Professional cybersecurity services specializing in penetration testing, vulnerability assessment, and secure architecture design.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/w7nx_z" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/in/rudy-hacks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Penetration Testing</li>
+                            <li>Web App Security</li>
+                            <li>Network Security</li>
+                            <li>Vulnerability Assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© All Rights Reserved 2025 by rudyhacks</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

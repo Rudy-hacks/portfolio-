@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | w7nx_z - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        /* Navigation fixes */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            transition: background-color 0.3s ease;
+            background-color: rgba(13, 18, 27, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            padding: 8px 12px;
+            position: relative;
+            font-weight: 600;
+            color: var(--text-dim);
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-light);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="img/logo.svg" alt="w7nx_z Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Projects Hero Section -->
+            <section class="page-hero">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>My Projects</h2>
+                        <p>Explore my portfolio of cybersecurity solutions and research</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Filters -->
+            <section class="filter-section">
+                <div class="container">
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All Projects</button>
+                        <button class="filter-btn" data-filter="web">Web Security</button>
+                        <button class="filter-btn" data-filter="network">Network Security</button>
+                        <button class="filter-btn" data-filter="tools">Security Tools</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Grid -->
+            <section class="projects-section">
+                <div class="container">
+                    <div class="projects-grid">
+                        <!-- Project Card 1 -->
+                        <div class="project-card" data-category="tools web">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h3>Security Audit Framework</h3>
+                                    <p>Terminal screenshot with security scan output</p>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Security Audit Framework</h3>
+                                <p>A comprehensive web application security testing framework for identifying OWASP Top 10 vulnerabilities. Developed with Python and integrated with various security tools for automated scanning and reporting.</p>
+                                <div class="tech-stack">
+                                    <span>Python</span>
+                                    <span>OWASP</span>
+                                    <span>Burp Suite</span>
+                                    <span>Docker</span>
+                                </div>
+                                <a href="project-detail-security-audit.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 2 -->
+                        <div class="project-card" data-category="network tools">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-network-wired"></i>
+                                    <h3>Network Intrusion Detection</h3>
+                                    <p>Network topology visualization with data flow</p>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Network Intrusion Detection System</h3>
+                                <p>A machine learning-powered network traffic analyzer that can detect anomalies and potential security threats in real-time. Features include behavioral analysis, pattern recognition, and automated alert systems.</p>
+                                <div class="tech-stack">
+                                    <span>Python</span>
+                                    <span>TensorFlow</span>
+                                    <span>Wireshark</span>
+                                    <span>Elasticsearch</span>
+                                </div>
+                                <a href="project-detail-nids.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 3 -->
+                        <div class="project-card" data-category="web tools">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-code"></i>
+                                    <h3>XSS Vulnerability Scanner</h3>
+                                    <p>Code editor with highlighted vulnerabilities</p>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>XSS Vulnerability Scanner</h3>
+                                <p>An advanced tool for detecting Cross-Site Scripting (XSS) vulnerabilities in web applications. Employs various payload injection techniques and context-aware analysis to identify potential exploitation vectors.</p>
+                                <div class="tech-stack">
+                                    <span>JavaScript</span>
+                                    <span>Node.js</span>
+                                    <span>Puppeteer</span>
+                                    <span>Express</span>
+                                </div>
+                                <a href="project-detail-xss.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 4 -->
+                        <div class="project-card" data-category="tools">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-key"></i>
+                                    <h3>Password Security Analyzer</h3>
+                                    <p>Password strength meter visualization</p>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Password Security Analyzer</h3>
+                                <p>A comprehensive password security tool that can evaluate password strength, detect common patterns, and simulate various cracking techniques to identify weaknesses in password policies.</p>
+                                <div class="tech-stack">
+                                    <span>Python</span>
+                                    <span>Hashcat</span>
+                                    <span>NLTK</span>
+                                    <span>Flask</span>
+                                </div>
+                                <a href="project-detail-password.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 5 -->
+                        <div class="project-card" data-category="network">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-microchip"></i>
+                                    <h3>IoT Security Framework</h3>
+                                    <p>Connected devices with security overlay</p>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>IoT Security Framework</h3>
+                                <p>A comprehensive framework for evaluating and improving the security of Internet of Things (IoT) devices and networks. Includes firmware analysis, communication protocol security, and vulnerability assessment tools.</p>
+                                <div class="tech-stack">
+                                    <span>C/C++</span>
+                                    <span>Embedded</span>
+                                    <span>MQTT</span>
+                                    <span>Zigbee</span>
+                                </div>
+                                <a href="project-detail-iot.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+
+                        <!-- Project Card 6 -->
+                        <div class="project-card" data-category="web tools">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-database"></i>
+                                    <h3>SQL Injection Defense</h3>
+                                    <p>Database structure with protection layers</p>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>SQL Injection Prevention Toolkit</h3>
+                                <p>A comprehensive toolkit for detecting, preventing, and remediating SQL injection vulnerabilities in web applications. Includes code scanners, runtime protection, and educational resources for developers.</p>
+                                <div class="tech-stack">
+                                    <span>PHP</span>
+                                    <span>Java</span>
+                                    <span>MySQL</span>
+                                    <span>SQLMap</span>
+                                </div>
+                                <a href="project-detail-sqli.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Research Publications -->
+            <section class="publications-section">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Research Publications</h2>
+                        <p>Academic and industry research contributions</p>
+                    </div>
+                    <div class="publications-list">
+                        <div class="publication-card">
+                            <div class="publication-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="publication-content">
+                                <h3>Advanced Techniques for Detecting Zero-Day Vulnerabilities in Web Applications</h3>
+                                <p class="publication-source">International Journal of Cybersecurity Research, 2024</p>
+                                <p class="publication-desc">This paper presents novel methodologies for identifying previously unknown vulnerabilities in web applications through advanced static and dynamic analysis techniques.</p>
+                                <a href="#" class="btn btn-outline btn-sm">READ PAPER</a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-card">
+                            <div class="publication-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="publication-content">
+                                <h3>Machine Learning Approaches to Network Intrusion Detection</h3>
+                                <p class="publication-source">International Conference on Cybersecurity, 2023</p>
+                                <p class="publication-desc">A comprehensive study on the application of various machine learning algorithms for detecting and classifying network intrusions with high accuracy and low false positive rates.</p>
+                                <a href="#" class="btn btn-outline btn-sm">READ PAPER</a>
+                            </div>
+                        </div>
+                        
+                        <div class="publication-card">
+                            <div class="publication-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="publication-content">
+                                <h3>Emerging Threats in IoT Security: Analysis and Mitigation Strategies</h3>
+                                <p class="publication-source">Journal of Information Security, 2022</p>
+                                <p class="publication-desc">This research examines the evolving threat landscape in IoT ecosystems and proposes multi-layered defense strategies to address vulnerabilities at various levels of the IoT stack.</p>
+                                <a href="#" class="btn btn-outline btn-sm">READ PAPER</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <img src="img/logo.svg" alt="w7nx_z Logo">
+                        </div>
+                        <p>Professional cybersecurity services specializing in penetration testing, vulnerability assessment, and secure architecture design.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/w7nx_z" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/in/rudy-hacks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Penetration Testing</li>
+                            <li>Web App Security</li>
+                            <li>Network Security</li>
+                            <li>Vulnerability Assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© All Rights Reserved 2025 by rudyhacks</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Project Filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const filter = this.getAttribute('data-filter');
+                    
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category').includes(filter)) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

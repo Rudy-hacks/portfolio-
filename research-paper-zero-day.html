@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zero-Day Research | w7nx_z - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        /* Navigation fixes */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            transition: background-color 0.3s ease;
+            background-color: rgba(13, 18, 27, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            padding: 8px 12px;
+            position: relative;
+            font-weight: 600;
+            color: var(--text-dim);
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-light);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <span>W7NX_Z</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+            <div class="breadcrumb">
+                <span>W7NX_Z</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="page-hero">
+                <div class="container">
+                    <div class="section-title">
+                        <h1>Zero-Day Vulnerability Research</h1>
+                        <p>Academic research and responsible disclosure of critical security vulnerabilities</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="publication-content section">
+                <div class="container">
+                    <div class="research-content">
+                        <p>Content coming soon...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>W7NX_Z</h3>
+                        <p>Professional cybersecurity services specializing in penetration testing, vulnerability assessment, and secure architecture design.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/w7nx_z" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/in/rudy-hacks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Penetration Testing</li>
+                            <li>Web App Security</li>
+                            <li>Network Security</li>
+                            <li>Vulnerability Assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© All Rights Reserved 2025 by rudyhacks</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

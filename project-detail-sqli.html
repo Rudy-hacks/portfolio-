@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Prevention Toolkit | w7nx_z - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        /* Navigation fixes */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            transition: background-color 0.3s ease;
+            background-color: rgba(13, 18, 27, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            padding: 8px 12px;
+            position: relative;
+            font-weight: 600;
+            color: var(--text-dim);
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-light);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <span>W7NX_Z</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Project Detail Header -->
+            <section class="project-detail-header">
+                <div class="container">
+                    <div class="project-detail-title">
+                        <h1>SQL Injection Prevention Toolkit</h1>
+                        <p>A comprehensive solution for detecting, preventing, and educating developers about SQL injection vulnerabilities</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Detail Content -->
+            <section class="project-detail-content">
+                <div class="container">
+                    <div class="project-detail-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-database"></i>
+                            <h3>SQL Injection Defense</h3>
+                            <p>Add visualization of the SQL Injection Prevention Toolkit workflow</p>
+                        </div>
+                    </div>
+
+                    <div class="project-detail-info">
+                        <div class="project-detail-description">
+                            <h2>Project Overview</h2>
+                            <p>The SQL Injection Prevention Toolkit is a comprehensive suite of tools designed to protect web applications from one of the most prevalent and dangerous attack vectors in cybersecurity: SQL injection. Despite being well-understood for decades, SQL injection vulnerabilities continue to plague applications across industries due to developer oversight and lack of proper security controls.</p>
+                            
+                            <p>This toolkit approaches the problem from multiple angles: detection of existing vulnerabilities through static and dynamic analysis, prevention through secure coding libraries and middleware, and developer education through interactive examples and remediation guidance. The goal is not just to patch vulnerabilities but to improve overall security posture through better understanding and development practices.</p>
+
+                            <div class="project-detail-features">
+                                <h3>Key Features</h3>
+                                <ul>
+                                    <li><strong>Static Code Analysis:</strong> Scans codebases to identify potential SQL injection vulnerabilities before deployment</li>
+                                    <li><strong>Dynamic Testing Engine:</strong> Performs runtime testing to discover exploitable injection points in running applications</li>
+                                    <li><strong>Parameterized Query Library:</strong> Secure database interaction libraries for multiple programming languages</li>
+                                    <li><strong>Web Application Firewall Rules:</strong> Custom ruleset specifically targeting SQL injection attack patterns</li>
+                                    <li><strong>Real-time Query Analysis:</strong> Runtime monitoring of database queries to detect and block malicious patterns</li>
+                                    <li><strong>Developer Training Module:</strong> Interactive examples showing vulnerable code and proper remediation techniques</li>
+                                    <li><strong>Secure Database Abstraction Layer:</strong> ORM-like interface that eliminates direct SQL construction</li>
+                                    <li><strong>Comprehensive Reporting:</strong> Detailed vulnerability reports with severity ratings and remediation steps</li>
+                                </ul>
+                            </div>
+
+                            <h3>Technical Implementation</h3>
+                            <p>The SQL Injection Prevention Toolkit is built as a modular system with components that can be integrated into different stages of the development and deployment lifecycle. The core is written in Python, with language-specific extensions for Java, PHP, JavaScript/Node.js, and .NET environments.</p>
+
+                            <p>Key technical components include:</p>
+                            <ul>
+                                <li><strong>Pattern-Based Parser:</strong> Abstract syntax tree analysis to identify unsafe database query construction</li>
+                                <li><strong>Taint Tracking Engine:</strong> Follows user input through application code to identify where it might reach database queries</li>
+                                <li><strong>Fuzzing Engine:</strong> Generates malicious inputs to test application resilience against injection attacks</li>
+                                <li><strong>Query Sanitization Libraries:</strong> Language-specific libraries implementing prepared statements and proper escaping</li>
+                                <li><strong>Database Proxy:</strong> Sits between application and database to analyze and sanitize queries in real-time</li>
+                                <li><strong>Regular Expression Engine:</strong> Pattern matching system to detect SQL injection attack signatures</li>
+                                <li><strong>Interactive Learning Environment:</strong> Sandbox for developers to experiment with attacks and defenses</li>
+                                <li><strong>CI/CD Integration:</strong> Plugins for common CI/CD platforms to include security scanning in pipelines</li>
+                            </ul>
+
+                            <h3>Development Process</h3>
+                            <p>Development of the toolkit began with extensive research into both legacy and emerging SQL injection techniques. I collaborated with database security experts to understand how different database engines process malicious inputs and how various application frameworks handle database queries.</p>
+
+                            <p>A key challenge was balancing security with usability. While the most secure approach would be to eliminate direct SQL entirely, many applications require the flexibility of custom queries. The toolkit needed to accommodate this reality while still providing robust protection. Extensive testing against both intentionally vulnerable applications and real-world codebases helped refine the detection algorithms and reduce false positives.</p>
+
+                            <h3>Results and Impact</h3>
+                            <p>The SQL Injection Prevention Toolkit has been deployed across multiple organizations, from financial institutions to e-commerce platforms. In one case study with a large healthcare provider, implementation of the toolkit identified over 200 previously unknown SQL injection vulnerabilities across their application ecosystem, including several critical vulnerabilities in patient data management systems.</p>
+
+                            <p>Companies using the toolkit have reported a 95% reduction in SQL injection vulnerabilities in new code, and the educational components have demonstrably improved developer awareness and coding practices. The WAF component alone has blocked thousands of attempted SQL injection attacks in production environments, providing an additional layer of defense even when application-level vulnerabilities exist.</p>
+                            
+                            <p>Beyond direct prevention, the toolkit has contributed to the security community through the publication of new SQL injection attack patterns and defense mechanisms, helping to advance the collective understanding of this persistent threat vector.</p>
+                        </div>
+
+                        <div class="project-detail-sidebar">
+                            <div class="project-detail-meta">
+                                <h3>Project Details</h3>
+                                <div class="project-meta-item">
+                                    <h4>Type</h4>
+                                    <p>Security Toolkit</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Duration</h4>
+                                    <p>10 months</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Role</h4>
+                                    <p>Lead Developer & Security Researcher</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Completion</h4>
+                                    <p>2022</p>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-tech">
+                                <h3>Technologies</h3>
+                                <div class="project-tech-stack">
+                                    <span>Python</span>
+                                    <span>Java</span>
+                                    <span>PHP</span>
+                                    <span>Node.js</span>
+                                    <span>.NET</span>
+                                    <span>MySQL</span>
+                                    <span>PostgreSQL</span>
+                                    <span>SQLite</span>
+                                    <span>MSSQL</span>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-links">
+                                <h3>Links</h3>
+                                <a href="#"><i class="fab fa-github"></i> View Source Code</a>
+                                <a href="#"><i class="fas fa-file-alt"></i> Technical Documentation</a>
+                                <a href="#"><i class="fas fa-graduation-cap"></i> Training Resources</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Projects -->
+            <section class="project-related">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Related Projects</h2>
+                        <p>Explore more of my application security projects</p>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h3>Security Audit Framework</h3>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Security Audit Framework</h3>
+                                <p>Comprehensive web application security testing framework for identifying OWASP Top 10 vulnerabilities.</p>
+                                <a href="project-detail-security-audit.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-bug"></i>
+                                    <h3>XSS Vulnerability Scanner</h3>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>XSS Vulnerability Scanner</h3>
+                                <p>Advanced tool for detecting cross-site scripting vulnerabilities in web applications with low false positive rates.</p>
+                                <a href="project-detail-xss.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>W7NX_Z</h3>
+                        <p>Professional cybersecurity services specializing in penetration testing, vulnerability assessment, and secure architecture design.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/w7nx_z" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/in-rudy-hacks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Penetration Testing</li>
+                            <li>Web App Security</li>
+                            <li>Network Security</li>
+                            <li>Vulnerability Assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© All Rights Reserved 2025 by rudyhacks</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

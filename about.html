@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | w7nx_z - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        /* Navigation fixes */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            transition: background-color 0.3s ease;
+            background-color: rgba(13, 18, 27, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            padding: 8px 12px;
+            position: relative;
+            font-weight: 600;
+            color: var(--text-dim);
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-light);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+        
+        /* Logo styling */
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+            filter: drop-shadow(0 0 5px rgba(0, 245, 212, 0.4));
+            transition: all 0.3s ease;
+        }
+        
+        .logo img:hover {
+            filter: drop-shadow(0 0 8px rgba(0, 245, 212, 0.7));
+            transform: scale(1.05);
+        }
+        
+        /* Custom profile SVG logo */
+        .profile-svg {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            margin: 0 auto;
+            display: block;
+            filter: drop-shadow(0 0 15px rgba(0, 245, 212, 0.5));
+        }
+        
+        .profile-image {
+            padding: 20px;
+            background-color: rgba(13, 18, 27, 0.5);
+            border-radius: 5px;
+            border: 1px solid rgba(0, 245, 212, 0.3);
+            max-width: 450px;
+            margin: 0 auto;
+        }
+        
+        /* Terminal styling - professional and clean */
+        .terminal {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Courier New', monospace;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 900px;
+            border-radius: 6px;
+            line-height: 1.6;
+            overflow: hidden;
+            border: 1px solid #30363d;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .terminal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 10px;
+        }
+        
+        .terminal-controls {
+            display: flex;
+            gap: 8px;
+            margin-right: 15px;
+        }
+        
+        .terminal-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-red { background-color: #ff5f56; }
+        .dot-yellow { background-color: #ffbd2e; }
+        .dot-green { background-color: #27c93f; }
+        
+        .terminal-title {
+            color: #8b949e;
+            font-size: 14px;
+        }
+        
+        .prompt {
+            color: #00f5d4;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .prompt::before {
+            content: "$ ";
+            margin-right: 5px;
+        }
+        
+        .response {
+            color: #c9d1d9;
+            margin-bottom: 25px;
+            padding-left: 20px;
+            display: block;
+        }
+        
+        .highlight {
+            color: #00f5d4;
+            font-weight: 600;
+        }
+        
+        /* Timeline styling */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 30px 0;
+            border-left: 1px dashed #30363d;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: -36px;
+            top: 0;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #00f5d4;
+            border: 2px solid #0d1117;
+        }
+        
+        .timeline-year {
+            font-weight: bold;
+            color: #00f5d4;
+            margin-bottom: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .timeline-content {
+            margin-left: 5px;
+        }
+        
+        /* Tool card styling */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .tool-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            padding: 20px;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 245, 212, 0.1);
+        }
+        
+        .tool-card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #21262d;
+            padding-bottom: 10px;
+        }
+        
+        .tool-icon {
+            margin-right: 12px;
+            font-size: 20px;
+            color: #00f5d4;
+        }
+        
+        .tool-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin: 0;
+        }
+        
+        .tool-details {
+            padding-left: 10px;
+        }
+        
+        .tool-details li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .tool-details li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #00f5d4;
+        }
+        
+        /* Handwritten section */
+        .handwritten {
+            font-family: 'Courier New', monospace;
+            color: #c9d1d9;
+            line-height: 1.6;
+            border-left: 3px solid #00f5d4;
+            padding-left: 20px;
+            margin: 30px 0;
+            background-color: rgba(0, 245, 212, 0.03);
+            padding: 15px 20px;
+            border-radius: 0 6px 6px 0;
+        }
+        
+        .handwritten-title {
+            font-family: 'Courier New', monospace;
+            color: #00f5d4;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+        
+        /* Section styling */
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-family: 'Courier New', monospace;
+            color: #e6edf3;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #30363d;
+            padding-bottom: 10px;
+            font-size: 20px;
+        }
+        
+        .section-title:before {
+            content: "# ";
+            color: #00f5d4;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 50px;
+        }
+        
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-image {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="img/logo.svg" alt="w7nx_z Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="profile-image">
+                        <svg class="profile-svg" viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: 100%;">
+                            <!-- Dark background with subtle gradient -->
+                            <defs>
+                                <radialGradient id="bg-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                                    <stop offset="0%" style="stop-color:#0c0f14; stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#050709; stop-opacity:1" />
+                                </radialGradient>
+                                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="8" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                                <linearGradient id="hoodie-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#121212; stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#000000; stop-opacity:1" />
+                                </linearGradient>
+                            </defs>
+                            
+                            <!-- Circular background -->
+                            <circle cx="300" cy="300" r="290" fill="url(#bg-gradient)" />
+                            
+                            <!-- Professional borders -->
+                            <circle cx="300" cy="300" r="270" fill="none" stroke="#151515" stroke-width="1" stroke-opacity="0.6" />
+                            <circle cx="300" cy="300" r="250" fill="none" stroke="#00f5d4" stroke-width="1" stroke-opacity="0.2" />
+                            
+                            <!-- Binary code background pattern -->
+                            <g fill="none" stroke="#00f5d4" stroke-width="0.5" stroke-opacity="0.1">
+                                <text x="120" y="160" font-family="monospace" font-size="8">01001000 01000001 01000011 01001011</text>
+                                <text x="120" y="175" font-family="monospace" font-size="8">01000101 01010010 00100000 01000101</text>
+                                <text x="120" y="190" font-family="monospace" font-size="8">01010100 01001000 01001001 01000011</text>
+                                <text x="400" y="440" font-family="monospace" font-size="8">01010011 01000101 01000011 01010101</text>
+                                <text x="400" y="455" font-family="monospace" font-size="8">01010010 01001001 01010100 01011001</text>
+                            </g>
+                            
+                            <!-- Tech Grid pattern -->
+                            <g fill="none" stroke="#111" stroke-width="0.5" stroke-opacity="0.3">
+                                <path d="M150,300 H450 M300,150 V450" />
+                                <circle cx="300" cy="300" r="120" />
+                                <circle cx="300" cy="300" r="180" />
+                            </g>
+
+                            <!-- Circuit pattern elements -->
+                            <g fill="none" stroke="#00f5d4" stroke-width="0.5" stroke-opacity="0.2">
+                                <path d="M150,200 H200 V240 H230 V270 H270" />
+                                <path d="M450,200 H400 V240 H370 V270 H330" />
+                                <circle cx="200" cy="200" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                <circle cx="230" cy="240" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                <circle cx="270" cy="270" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                <circle cx="400" cy="200" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                <circle cx="370" cy="240" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                                <circle cx="330" cy="270" r="3" fill="#00f5d4" fill-opacity="0.3" />
+                            </g>
+                            
+                            <!-- Professional Black Hoodie silhouette -->
+                            <path d="M300,140 
+                                     C365,140 420,180 430,230
+                                     C435,255 435,280 430,305
+                                     L450,410 L390,438 L365,380
+                                     C345,410 325,425 300,430
+                                     C275,425 255,410 235,380
+                                     L210,438 L150,410 L170,305
+                                     C165,280 165,255 170,230
+                                     C180,180 235,140 300,140 Z" 
+                                  fill="url(#hoodie-gradient)" stroke="#222" stroke-width="2" stroke-opacity="0.8" />
+                            
+                            <!-- Anonymous mask face -->
+                            <g>
+                                <!-- Hood outline with mask integration -->
+                                <path d="M255,235 
+                                         C255,200 275,180 300,180
+                                         C325,180 345,200 345,235
+                                         C345,270 325,290 300,290
+                                         C275,290 255,270 255,235 Z" 
+                                      fill="#000000" stroke="#333" stroke-width="1" stroke-opacity="0.7" />
+                                
+                                <!-- Mask shape -->
+                                <path d="M270,235 
+                                         C270,210 285,195 300,195
+                                         C315,195 330,210 330,235
+                                         C330,260 315,275 300,275
+                                         C285,275 270,260 270,235 Z"
+                                      fill="#111" stroke="#222" stroke-width="0.5" />
+                                      
+                                <!-- Mask details - eyes -->
+                                <ellipse cx="285" cy="225" rx="10" ry="7" fill="#00f5d4" fill-opacity="0.4" stroke="#00f5d4" stroke-width="0.5" stroke-opacity="0.8" />
+                                <ellipse cx="315" cy="225" rx="10" ry="7" fill="#00f5d4" fill-opacity="0.4" stroke="#00f5d4" stroke-width="0.5" stroke-opacity="0.8" />
+                                
+                                <!-- Mask details - mouth -->
+                                <path d="M285,250 C290,258 310,258 315,250" fill="none" stroke="#222" stroke-width="1" />
+                                
+                                <!-- Shadow beneath mask -->
+                                <ellipse cx="300" cy="235" rx="30" ry="35" fill="#000000" fill-opacity="0.3" />
+                            </g>
+                            
+                            <!-- Hoodie zipper line -->
+                            <path d="M300,290 V380" stroke="#444" stroke-width="1.5" stroke-opacity="0.8" />
+                            <circle cx="300" cy="320" r="3" fill="#333" />
+                            <circle cx="300" cy="350" r="3" fill="#333" />
+                            
+                            <!-- Professional accent lines -->
+                            <path d="M250,310 H220 C210,310 205,315 205,325 V350" stroke="#444" stroke-width="1" stroke-opacity="0.8" fill="none" />
+                            <path d="M350,310 H380 C390,310 395,315 395,325 V350" stroke="#444" stroke-width="1" stroke-opacity="0.8" fill="none" />
+                            
+                            <!-- Tech detail accents -->
+                            <path d="M240,380 H360" stroke="#444" stroke-width="1" stroke-opacity="0.6" stroke-dasharray="2,2" />
+                            <path d="M250,390 H350" stroke="#444" stroke-width="1" stroke-opacity="0.6" stroke-dasharray="2,2" />
+                            
+                            <!-- Hacker emblem on left chest -->
+                            <g transform="translate(250, 320)">
+                                <circle cx="0" cy="0" r="15" fill="#000000" stroke="#444" stroke-width="1" stroke-opacity="0.9" />
+                                <path d="M-8,-2 L-3,8 L0,0 L3,8 L8,-2" stroke="#00f5d4" stroke-width="1" stroke-opacity="0.8" fill="none" />
+                                <circle cx="0" cy="0" r="3" fill="#00f5d4" fill-opacity="0.5" />
+                            </g>
+                            
+                            <!-- Lock icon on right chest -->
+                            <g transform="translate(350, 320)">
+                                <circle cx="0" cy="0" r="12" fill="#000000" stroke="#333" stroke-width="0.5" />
+                                <path d="M-5,-2 V-7 A5,5 0 0,1 5,-7 V-2" fill="none" stroke="#00f5d4" stroke-width="1" stroke-opacity="0.6" />
+                                <rect x="-5" y="-2" width="10" height="8" rx="1" fill="#111" stroke="#00f5d4" stroke-width="0.5" stroke-opacity="0.6" />
+                                <circle cx="0" cy="2" r="1" fill="#00f5d4" fill-opacity="0.6" />
+                            </g>
+                            
+                            <!-- Name styling with professional typography -->
+                            <g filter="url(#glow)">
+                                <text x="300" y="490" fill="#00f5d4" font-family="monospace" font-size="42" font-weight="bold" text-anchor="middle" letter-spacing="3">W7NX_Z</text>
+                                <text x="300" y="525" fill="#00f5d4" font-family="monospace" font-size="16" font-weight="normal" text-anchor="middle" letter-spacing="5">CYBERSECURITY</text>
+                            </g>
+                            
+                            <!-- Professional decorative elements -->
+                            <path d="M220,490 H260 M340,490 H380" stroke="#00f5d4" stroke-width="1" stroke-opacity="0.4" />
+                        </svg>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">w7nx_z@cybersec:~</div>
+                        </div>
+                        
+                        <div class="terminal-content">
+                            <span class="prompt">whoami</span>
+                            <div class="response">
+                                I am Rudy, known in cybersecurity circles as w7nx_z. My journey into
+                                digital security began when I was 15, when I discovered I could find
+                                vulnerabilities in systems faster than my peers could build them.
+                                <br><br>
+                                What started as curiosity evolved into a passion for ethical hacking and
+                                a professional mission to protect organizations from those who use the
+                                same skills with malicious intent.
+                            </div>
+                            
+                            <span class="prompt">cat /etc/profile</span>
+                            <div class="response">
+                                Based in Ahmedabad, Gujarat, I've built my career around network
+                                security, penetration testing, and developing custom security frameworks
+                                that address the evolving threat landscape.
+                                <br><br>
+                                With over 6 years of hands-on experience in the cybersecurity domain,
+                                I've helped organizations identify critical vulnerabilities before they
+                                could be exploited, developed automated security tools, and contributed
+                                to open-source security projects.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">Professional Experience Timeline</h2>
+                        <div class="handwritten">
+                            <p class="handwritten-title">My journey in cybersecurity...</p>
+                            <p>The digital landscape is constantly evolving, with new threats emerging daily. My approach combines <span class="highlight">technical expertise</span> with a <span class="highlight">creative mindset</span> to anticipate and mitigate these threats before they can be exploited.</p>
+                        </div>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-year">2023-Present</div>
+                                <div class="timeline-content">
+                                    <p><span class="highlight">Senior Security Consultant</span></p>
+                                    <ul>
+                                        <li>Leading red team operations for enterprise clients</li>
+                                        <li>Developing custom security frameworks for financial institutions</li>
+                                        <li>Advanced cloud security architecture and threat modeling</li>
+                                        <li>Zero-day vulnerability research in emerging technologies</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-year">2021-2023</div>
+                                <div class="timeline-content">
+                                    <p><span class="highlight">Penetration Testing Lead</span></p>
+                                    <ul>
+                                        <li>Conducted comprehensive security assessments for Fortune 500 companies</li>
+                                        <li>Built automated security testing pipelines for DevSecOps integration</li>
+                                        <li>Developed secure coding guidelines for development teams</li>
+                                        <li>Advanced web application and API security testing</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-year">2019-2021</div>
+                                <div class="timeline-content">
+                                    <p><span class="highlight">Security Researcher</span></p>
+                                    <ul>
+                                        <li>Discovered and responsibly disclosed multiple CVEs in popular frameworks</li>
+                                        <li>Contributed to open-source security tools and vulnerability databases</li>
+                                        <li>Developed specialized tools for network security analysis</li>
+                                        <li>Published research on emerging attack vectors in IoT devices</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="timeline-item">
+                                <div class="timeline-year">2017-2019</div>
+                                <div class="timeline-content">
+                                    <p><span class="highlight">Security Analyst</span></p>
+                                    <ul>
+                                        <li>Performed vulnerability assessments and penetration testing</li>
+                                        <li>Implemented security monitoring solutions</li>
+                                        <li>Assisted in incident response and digital forensics</li>
+                                        <li>Developed internal security training programs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">Technical Expertise & Tools</h2>
+                        
+                        <div class="tool-grid">
+                            <div class="tool-card">
+                                <div class="tool-card-header">
+                                    <i class="fas fa-bug tool-icon"></i>
+                                    <h3 class="tool-name">Penetration Testing</h3>
+                                </div>
+                                <ul class="tool-details">
+                                    <li><span class="highlight">Kali Linux</span> - Advanced Security Distro</li>
+                                    <li><span class="highlight">Metasploit</span> - Exploitation Framework</li>
+                                    <li><span class="highlight">Nmap</span> - Network Mapping & Recon</li>
+                                    <li><span class="highlight">Wireshark</span> - Network Protocol Analysis</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-card-header">
+                                    <i class="fas fa-globe tool-icon"></i>
+                                    <h3 class="tool-name">Web Application Security</h3>
+                                </div>
+                                <ul class="tool-details">
+                                    <li><span class="highlight">Burp Suite Pro</span> - Web Vulnerability Scanner</li>
+                                    <li><span class="highlight">OWASP ZAP</span> - Security Testing Tool</li>
+                                    <li><span class="highlight">Nikto</span> - Web Server Scanner</li>
+                                    <li><span class="highlight">SQLmap</span> - SQL Injection Testing</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-card-header">
+                                    <i class="fas fa-code tool-icon"></i>
+                                    <h3 class="tool-name">Security Development</h3>
+                                </div>
+                                <ul class="tool-details">
+                                    <li><span class="highlight">Python</span> - Security Automation & Tools</li>
+                                    <li><span class="highlight">JavaScript</span> - Web Security Testing</li>
+                                    <li><span class="highlight">Bash</span> - Security Scripting</li>
+                                    <li><span class="highlight">Git</span> - Secure Development Workflow</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-card-header">
+                                    <i class="fas fa-cloud tool-icon"></i>
+                                    <h3 class="tool-name">Cloud Security</h3>
+                                </div>
+                                <ul class="tool-details">
+                                    <li><span class="highlight">AWS Security</span> - IAM, CloudTrail, GuardDuty</li>
+                                    <li><span class="highlight">Azure Sentinel</span> - Security Monitoring</li>
+                                    <li><span class="highlight">Docker</span> & <span class="highlight">Kubernetes</span> Security</li>
+                                    <li><span class="highlight">Terraform</span> - Security as Code</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-card-header">
+                                    <i class="fas fa-shield-alt tool-icon"></i>
+                                    <h3 class="tool-name">Defense & Monitoring</h3>
+                                </div>
+                                <ul class="tool-details">
+                                    <li><span class="highlight">Splunk</span> - Security Information & Event Management</li>
+                                    <li><span class="highlight">ELK Stack</span> - Security Analytics</li>
+                                    <li><span class="highlight">Suricata</span> - Network IDS/IPS</li>
+                                    <li><span class="highlight">OSSEC</span> - Host-based IDS</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="tool-card">
+                                <div class="tool-card-header">
+                                    <i class="fas fa-certificate tool-icon"></i>
+                                    <h3 class="tool-name">Certifications</h3>
+                                </div>
+                                <ul class="tool-details">
+                                    <li><span class="highlight">OSCP</span> - Offensive Security Certified Professional</li>
+                                    <li><span class="highlight">CEH</span> - Certified Ethical Hacker</li>
+                                    <li><span class="highlight">CISSP</span> - Certified Information Systems Security Professional</li>
+                                    <li><span class="highlight">GWAPT</span> - GIAC Web Application Penetration Tester</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="section">
+                        <h2 class="section-title">Security Philosophy</h2>
+                        <div class="handwritten">
+                            <p class="handwritten-title">I believe in security as a mindset...</p>
+                            <p>Security is not just a checkbox or a one-time project. It's a continuous process that requires constant vigilance, adaptation, and a deep understanding of both technical systems and human behavior.</p>
+                            <p>My approach is built on these core principles:</p>
+                            <ul>
+                                <li><span class="highlight">Think like an attacker</span> - Understanding offensive techniques to build better defenses</li>
+                                <li><span class="highlight">Defense in depth</span> - Multiple layers of security controls</li>
+                                <li><span class="highlight">Least privilege</span> - Limiting access to only what's necessary</li>
+                                <li><span class="highlight">Continuous learning</span> - Staying ahead of evolving threats</li>
+                                <li><span class="highlight">Responsible disclosure</span> - Ethical handling of vulnerabilities</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-controls">
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
+                            </div>
+                            <div class="terminal-title">w7nx_z@cybersec:~/contact</div>
+                        </div>
+                        
+                        <div class="terminal-content">
+                            <span class="prompt">echo $CONTACT_INFO</span>
+                            <div class="response">
+                                <span class="highlight">EMAIL:</span> rudyhacks@gmail.com<br>
+                                <span class="highlight">LOCATION:</span> Ahmedabad, Gujarat, India<br>
+                                <span class="highlight">AVAILABILITY:</span> Open to consulting and security projects<br>
+                                <span class="highlight">GITHUB:</span> github.com/w7nx_z<br>
+                                <span class="highlight">LINKEDIN:</span> linkedin.com/in/rudy-hacks
+                            </div>
+                            
+                            <span class="prompt">cat ./services.txt</span>
+                            <div class="response">
+                                • <span class="highlight">Security Assessments</span> - Comprehensive vulnerability scanning and penetration testing<br>
+                                • <span class="highlight">Security Architecture</span> - Design and implementation of secure systems<br>
+                                • <span class="highlight">Cloud Security</span> - Securing AWS, Azure, and GCP environments<br>
+                                • <span class="highlight">Security Training</span> - Custom workshops for development teams<br>
+                                • <span class="highlight">Incident Response</span> - Planning and simulation exercises
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <div class="footer-logo">
+                            <img src="img/logo.svg" alt="w7nx_z Logo">
+                        </div>
+                        <p>Professional cybersecurity services specializing in penetration testing, vulnerability assessment, and secure architecture design.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/w7nx_z" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/in/rudy-hacks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Penetration Testing</li>
+                            <li>Web App Security</li>
+                            <li>Network Security</li>
+                            <li>Vulnerability Assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© All Rights Reserved 2025 by rudyhacks</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

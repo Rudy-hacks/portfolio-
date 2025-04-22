@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Security Framework | w7nx_z - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        /* Navigation fixes */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            transition: background-color 0.3s ease;
+            background-color: rgba(13, 18, 27, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            padding: 8px 12px;
+            position: relative;
+            font-weight: 600;
+            color: var(--text-dim);
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-light);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <span>W7NX_Z</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Project Detail Header -->
+            <section class="project-detail-header">
+                <div class="container">
+                    <div class="project-detail-title">
+                        <h1>IoT Security Framework</h1>
+                        <p>A comprehensive framework for securing Internet of Things devices and ecosystems against modern threats</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Detail Content -->
+            <section class="project-detail-content">
+                <div class="container">
+                    <div class="project-detail-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-microchip"></i>
+                            <h3>IoT Framework Architecture</h3>
+                            <p>Add a diagram of the IoT Security Framework architecture</p>
+                        </div>
+                    </div>
+
+                    <div class="project-detail-info">
+                        <div class="project-detail-description">
+                            <h2>Project Overview</h2>
+                            <p>The IoT Security Framework is a comprehensive solution designed to address the unique security challenges faced by Internet of Things ecosystems. With the proliferation of IoT devices across industries, security has often lagged behind functionality, creating significant vulnerabilities in many deployments.</p>
+                            
+                            <p>This framework provides a structured approach to secure IoT environments from device-level security through network communications to backend data processing. It combines lightweight security protocols optimized for resource-constrained devices with scalable monitoring capabilities to detect and mitigate threats across IoT networks of any size.</p>
+
+                            <div class="project-detail-features">
+                                <h3>Key Features</h3>
+                                <ul>
+                                    <li><strong>Secure Boot Mechanism:</strong> Ensures devices only execute authorized firmware and prevents compromise at boot time</li>
+                                    <li><strong>Lightweight Encryption:</strong> Custom encryption protocols optimized for resource-constrained devices</li>
+                                    <li><strong>Device Authentication Framework:</strong> Robust mutual authentication with minimal overhead</li>
+                                    <li><strong>Secure Over-the-Air Updates:</strong> Protected update mechanism to safely patch devices in the field</li>
+                                    <li><strong>Behavioral Anomaly Detection:</strong> Machine learning-based system to identify abnormal device behaviors</li>
+                                    <li><strong>Network Segmentation Engine:</strong> Tools to isolate IoT networks from critical infrastructure</li>
+                                    <li><strong>Compliance Validation:</strong> Automated checks against IoT security standards and regulations</li>
+                                    <li><strong>Control Dashboard:</strong> Centralized interface for monitoring and managing IoT security posture</li>
+                                </ul>
+                            </div>
+
+                            <h3>Technical Implementation</h3>
+                            <p>The IoT Security Framework employs a multi-layered architecture addressing security at every level of the IoT stack. The implementation uses C and Rust for device-level components, ensuring both performance and memory safety, while the backend monitoring and management systems are built with Python and a containerized microservices architecture.</p>
+
+                            <p>Key technical components include:</p>
+                            <ul>
+                                <li><strong>Secure Bootloader:</strong> Hardware-verified boot sequence that validates firmware signatures before execution</li>
+                                <li><strong>TinyDTLS Implementation:</strong> Optimized DTLS for secure communications on constrained devices</li>
+                                <li><strong>Identity Management Service:</strong> Certificate and key management system for device authentication</li>
+                                <li><strong>Firmware Verification Module:</strong> Cryptographic verification of firmware updates before installation</li>
+                                <li><strong>Behavioral Baseline Engine:</strong> Machine learning system that establishes normal device behavior patterns</li>
+                                <li><strong>Anomaly Detection Pipeline:</strong> Stream processing system for real-time analysis of device telemetry</li>
+                                <li><strong>Network Traffic Analysis:</strong> Deep packet inspection specialized for IoT protocols</li>
+                                <li><strong>API Gateway:</strong> Secure gateway for backend services with robust authentication</li>
+                            </ul>
+
+                            <h3>Development Process</h3>
+                            <p>The development of this framework involved extensive research into IoT attack vectors and vulnerabilities. I collaborated with hardware security specialists to understand the constraints of various IoT platforms and design security measures that could be implemented across diverse device types.</p>
+
+                            <p>A significant challenge was balancing security with the limited computational resources and battery constraints of many IoT devices. This required innovative approaches to cryptography and authentication that maintain security guarantees while minimizing resource usage. The framework was tested against real-world attack scenarios in a lab environment and refined based on findings.</p>
+
+                            <h3>Results and Impact</h3>
+                            <p>The IoT Security Framework has been deployed in industrial IoT environments spanning manufacturing, energy, and smart building sectors. In one notable implementation, the framework identified and prevented an attempted botnet recruitment attack targeting industrial sensors, potentially saving millions in downtime and remediation costs.</p>
+
+                            <p>Organizations adopting the framework have reported a 70% reduction in security incidents related to IoT infrastructure and a 40% decrease in time required to identify and mitigate threats when they do occur. The framework has also helped several organizations achieve compliance with emerging IoT security regulations with minimal additional effort.</p>
+                            
+                            <p>The project has contributed to the broader IoT security community through the publication of best practices and the release of select components as open-source tools, helping to raise the security baseline across the industry.</p>
+                        </div>
+
+                        <div class="project-detail-sidebar">
+                            <div class="project-detail-meta">
+                                <h3>Project Details</h3>
+                                <div class="project-meta-item">
+                                    <h4>Type</h4>
+                                    <p>Security Framework</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Duration</h4>
+                                    <p>8 months</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Role</h4>
+                                    <p>Lead Architect & Security Engineer</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Completion</h4>
+                                    <p>2023</p>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-tech">
+                                <h3>Technologies</h3>
+                                <div class="project-tech-stack">
+                                    <span>C</span>
+                                    <span>Rust</span>
+                                    <span>Python</span>
+                                    <span>MQTT</span>
+                                    <span>TinyDTLS</span>
+                                    <span>Docker</span>
+                                    <span>Kubernetes</span>
+                                    <span>TensorFlow</span>
+                                    <span>ELK Stack</span>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-links">
+                                <h3>Links</h3>
+                                <a href="#"><i class="fab fa-github"></i> View Source Code</a>
+                                <a href="#"><i class="fas fa-file-alt"></i> Whitepaper</a>
+                                <a href="#"><i class="fas fa-file-pdf"></i> Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Projects -->
+            <section class="project-related">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Related Projects</h2>
+                        <p>Explore more of my security framework projects</p>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h3>Security Audit Framework</h3>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Security Audit Framework</h3>
+                                <p>Comprehensive web application security testing framework for identifying OWASP Top 10 vulnerabilities.</p>
+                                <a href="project-detail-security-audit.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-network-wired"></i>
+                                    <h3>Network Intrusion Detection System</h3>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Network Intrusion Detection System</h3>
+                                <p>AI-powered network monitoring system that detects and alerts on suspicious network activity in real-time.</p>
+                                <a href="project-detail-nids.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>W7NX_Z</h3>
+                        <p>Professional cybersecurity services specializing in penetration testing, vulnerability assessment, and secure architecture design.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/w7nx_z" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/in-rudy-hacks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Penetration Testing</li>
+                            <li>Web App Security</li>
+                            <li>Network Security</li>
+                            <li>Vulnerability Assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© All Rights Reserved 2025 by rudyhacks</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> go 

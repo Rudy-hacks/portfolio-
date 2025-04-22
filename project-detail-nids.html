@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Intrusion Detection System | WIZEX - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        /* Navigation fixes */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            transition: background-color 0.3s ease;
+            background-color: rgba(13, 18, 27, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            padding: 8px 12px;
+            position: relative;
+            font-weight: 600;
+            color: var(--text-dim);
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-light);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="img/logo.svg" alt="WIZEX Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Project Detail Header -->
+            <section class="project-detail-header">
+                <div class="container">
+                    <div class="project-detail-title">
+                        <h1>Network Intrusion Detection System</h1>
+                        <p>Advanced network monitoring solution with machine learning capabilities for real-time threat detection and automated response</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Detail Content -->
+            <section class="project-detail-content">
+                <div class="container">
+                    <div class="project-detail-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Network Defense</h3>
+                            <p>Add visualization of the NIDS dashboard showing network traffic analysis</p>
+                        </div>
+                    </div>
+
+                    <div class="project-detail-info">
+                        <div class="project-detail-description">
+                            <h2>Project Overview</h2>
+                            <p>The Network Intrusion Detection System is a robust security solution developed by WIZEX to monitor network traffic for suspicious activity and potential threats.</p>
+                            
+                            <p>Unlike conventional NIDS implementations, this system incorporates deep packet inspection, behavioral analysis, and automated response capabilities to provide comprehensive protection against a wide range of network-based threats. The system is designed to scale from small business environments to enterprise networks, with flexible deployment options and integration capabilities with existing security infrastructure.</p>
+
+                            <div class="project-detail-features">
+                                <h3>Key Features</h3>
+                                <ul>
+                                    <li><strong>Hybrid Detection Engine:</strong> Combines signature-based and anomaly-based detection for comprehensive threat identification</li>
+                                    <li><strong>Deep Packet Inspection:</strong> Analyzes packet payloads across multiple protocols for malicious content</li>
+                                    <li><strong>Machine Learning Models:</strong> Uses supervised and unsupervised learning to identify anomalous network behavior</li>
+                                    <li><strong>Real-time Alerting:</strong> Provides immediate notifications through multiple channels when threats are detected</li>
+                                    <li><strong>Automated Response:</strong> Configurable response actions including traffic blocking, quarantine, and forensic capture</li>
+                                    <li><strong>Traffic Visualization:</strong> Interactive dashboard for monitoring network activity and threat patterns</li>
+                                    <li><strong>Threat Intelligence Integration:</strong> Connects with external threat feeds to stay current on emerging threats</li>
+                                    <li><strong>Forensic Capture:</strong> Records detailed packet data for post-incident analysis and investigation</li>
+                                    <li><strong>Distributed Architecture:</strong> Supports deployment across multiple network segments with centralized management</li>
+                                </ul>
+                            </div>
+
+                            <h3>Technical Implementation</h3>
+                            <p>The NIDS is built on a modular architecture with several specialized components handling different aspects of network monitoring and analysis. The core engine is implemented in C++ for performance-critical packet processing, with Python used for the analytics engine and management interface.</p>
+
+                            <p>Key technical components include:</p>
+                            <ul>
+                                <li><strong>Packet Capture Engine:</strong> High-performance libpcap-based module optimized for minimal packet loss</li>
+                                <li><strong>Protocol Analyzers:</strong> Specialized modules for TCP/IP, HTTP, DNS, SMB, and other common protocols</li>
+                                <li><strong>Signature Engine:</strong> Efficient pattern matching algorithms for comparing traffic against known attack signatures</li>
+                                <li><strong>Anomaly Detection System:</strong> Multiple ML models including isolation forests, autoencoders, and LSTM networks</li>
+                                <li><strong>Event Correlation Engine:</strong> Connects related alerts across time and network space to identify attack campaigns</li>
+                                <li><strong>Response Automation Framework:</strong> Rule-based system for triggering defensive actions</li>
+                                <li><strong>Distributed Data Store:</strong> Time-series database optimized for high-throughput event storage</li>
+                                <li><strong>API Gateway:</strong> RESTful API for integration with SIEM, SOAR, and other security systems</li>
+                                <li><strong>Web Interface:</strong> React-based dashboard with D3.js visualizations for intuitive monitoring</li>
+                            </ul>
+
+                            <h3>Development Process</h3>
+                            <p>The development of this NIDS began with extensive research into modern network attack methodologies and defensive techniques. I worked closely with network security specialists to understand the limitations of existing solutions and identify opportunities for improvement.</p>
+
+                            <p>A significant challenge was optimizing the system for high-speed networks while maintaining detection accuracy. This required careful algorithm selection and implementation, with extensive testing under varying traffic conditions. The machine learning models were trained on a combination of public datasets (DARPA, KDD Cup) and custom-generated traffic patterns to ensure robustness against diverse attack scenarios.</p>
+
+                            <p>Development followed an iterative approach, with each component being tested individually before integration. Continuous benchmarking against established NIDS solutions (Snort, Suricata) helped validate performance and detection capabilities throughout the development process.</p>
+
+                            <h3>Results and Impact</h3>
+                            <p>The NIDS has been deployed in several environments ranging from mid-sized businesses to educational institutions. In comparative testing, the system demonstrated a 35% improvement in detection rate for novel attacks compared to traditional signature-based solutions, while maintaining a low false positive rate of under 0.1%.</p>
+
+                            <p>A particularly notable success was the system's ability to detect a sophisticated lateral movement attack during a penetration testing exercise that evaded multiple commercial security products. The system's anomaly detection identified unusual internal network scanning activity and correlated it with subsequent privilege escalation attempts, triggering alerts and automated containment actions.</p>
+                            
+                            <p>Organizations using the NIDS have reported significant improvements in their security posture, with one mid-sized financial institution estimating that the early detection capabilities prevented potential losses exceeding $1.2M from targeted attacks. The system's detailed forensic capture capabilities have also proven valuable for incident response teams, reducing investigation time by an average of 60%.</p>
+                            
+                            <p>The project has also contributed to the broader cybersecurity community through the publication of research findings related to network traffic behavior modeling and the release of selected components as open-source tools.</p>
+                        </div>
+
+                        <div class="project-detail-sidebar">
+                            <div class="project-detail-meta">
+                                <h3>Project Details</h3>
+                                <div class="project-meta-item">
+                                    <h4>Type</h4>
+                                    <p>Network Security Solution</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Duration</h4>
+                                    <p>14 months</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Role</h4>
+                                    <p>Lead Developer & Security Architect</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Completion</h4>
+                                    <p>2022</p>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-tech">
+                                <h3>Technologies</h3>
+                                <div class="project-tech-stack">
+                                    <span>C++</span>
+                                    <span>Python</span>
+                                    <span>TensorFlow</span>
+                                    <span>libpcap</span>
+                                    <span>Kafka</span>
+                                    <span>InfluxDB</span>
+                                    <span>React</span>
+                                    <span>D3.js</span>
+                                    <span>Docker</span>
+                                    <span>Kubernetes</span>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-links">
+                                <h3>Links</h3>
+                                <a href="#"><i class="fab fa-github"></i> View Source Code</a>
+                                <a href="#"><i class="fas fa-file-alt"></i> Technical Whitepaper</a>
+                                <a href="#"><i class="fas fa-book"></i> Documentation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Projects -->
+            <section class="project-related">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Related Projects</h2>
+                        <p>Explore more of my network security projects</p>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <h3>Security Audit Framework</h3>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>Security Audit Framework</h3>
+                                <p>Comprehensive web application security testing framework for identifying OWASP Top 10 vulnerabilities.</p>
+                                <a href="project-detail-security-audit.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-wifi"></i>
+                                    <h3>IoT Security Framework</h3>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>IoT Security Framework</h3>
+                                <p>Comprehensive security solution for Internet of Things devices and networks, addressing unique challenges in IoT security.</p>
+                                <a href="project-detail-iot.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>WIZEX</h3>
+                        <p>Professional cybersecurity services specializing in penetration testing, vulnerability assessment, and secure architecture design.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/WIZEX" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/in-rudy-hacks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Penetration Testing</li>
+                            <li>Web App Security</li>
+                            <li>Network Security</li>
+                            <li>Vulnerability Assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© All Rights Reserved 2025 by rudyhacks</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

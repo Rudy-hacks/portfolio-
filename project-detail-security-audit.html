@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Audit Framework | w7nx_z - Cybersecurity Professional</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/script.js" defer></script>
+    <style>
+        /* Navigation fixes */
+        header {
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            transition: background-color 0.3s ease;
+            background-color: rgba(13, 18, 27, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            margin-left: auto;
+        }
+        
+        .nav-links a {
+            padding: 8px 12px;
+            position: relative;
+            font-weight: 600;
+            color: var(--text-dim);
+            transition: all 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--text-light);
+        }
+        
+        .nav-links a:hover::after, .nav-links a.active::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <span>W7NX_Z</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Project Detail Header -->
+            <section class="project-detail-header">
+                <div class="container">
+                    <div class="project-detail-title">
+                        <h1>Security Audit Framework</h1>
+                        <p>A comprehensive web application security testing framework for identifying OWASP Top 10 vulnerabilities</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Detail Content -->
+            <section class="project-detail-content">
+                <div class="container">
+                    <div class="project-detail-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Security Audit Framework Screenshot</h3>
+                            <p>Add a terminal screenshot showing vulnerability scan output or dashboard visualization</p>
+                        </div>
+                    </div>
+
+                    <div class="project-detail-info">
+                        <div class="project-detail-description">
+                            <h2>Project Overview</h2>
+                            <p>The Security Audit Framework is a comprehensive tool designed to automate the process of identifying security vulnerabilities in web applications. Built with a focus on the OWASP Top 10 vulnerabilities, this framework provides security professionals with an efficient way to conduct thorough security assessments.</p>
+                            
+                            <p>The framework combines static analysis, dynamic testing, and API security validation to provide a holistic view of an application's security posture. By automating these processes, it significantly reduces the time required to conduct comprehensive security audits while ensuring consistent and thorough testing.</p>
+
+                            <div class="project-detail-features">
+                                <h3>Key Features</h3>
+                                <ul>
+                                    <li><strong>Automated Vulnerability Detection:</strong> Identifies common web application vulnerabilities including SQL injection, XSS, CSRF, and more</li>
+                                    <li><strong>Custom Scanning Profiles:</strong> Configurable scanning profiles to focus on specific vulnerability types or application components</li>
+                                    <li><strong>Comprehensive Reporting:</strong> Detailed reports with vulnerability descriptions, risk assessments, and remediation recommendations</li>
+                                    <li><strong>API Security Testing:</strong> Dedicated module for testing API endpoints for common security issues</li>
+                                    <li><strong>Integration Capabilities:</strong> Integrates with CI/CD pipelines and other security tools</li>
+                                    <li><strong>Low False Positive Rate:</strong> Advanced validation techniques to minimize false positives</li>
+                                </ul>
+                            </div>
+
+                            <h3>Technical Implementation</h3>
+                            <p>The framework is built using Python as the core language, with various modules handling different aspects of security testing. It leverages Docker for containerization, enabling consistent deployment across different environments.</p>
+
+                            <p>The architecture consists of several components:</p>
+                            <ul>
+                                <li><strong>Scanner Engine:</strong> Core component responsible for coordinating the scanning process</li>
+                                <li><strong>Vulnerability Modules:</strong> Specialized modules for detecting specific types of vulnerabilities</li>
+                                <li><strong>Report Generator:</strong> Creates comprehensive HTML and PDF reports of scan findings</li>
+                                <li><strong>API Connector:</strong> Integrates with various web technologies and authentication mechanisms</li>
+                                <li><strong>Database:</strong> Stores scan results and vulnerability information for historical analysis</li>
+                            </ul>
+
+                            <h3>Development Process</h3>
+                            <p>The development of this framework involved extensive research into common web application vulnerabilities and effective detection techniques. I created a modular architecture to ensure flexibility and extensibility, allowing for easy addition of new vulnerability detection modules.</p>
+
+                            <p>Testing was performed against intentionally vulnerable applications like DVWA and OWASP WebGoat to validate detection capabilities and minimize false positives.</p>
+
+                            <h3>Results and Impact</h3>
+                            <p>The Security Audit Framework has been successfully used to identify vulnerabilities in numerous web applications. In benchmark tests, it demonstrated a 92% detection rate for OWASP Top 10 vulnerabilities with a false positive rate of less than 5%.</p>
+
+                            <p>The automated nature of the framework has reduced security assessment time by approximately 60% compared to manual testing, while also providing more consistent and thorough results.</p>
+                        </div>
+
+                        <div class="project-detail-sidebar">
+                            <div class="project-detail-meta">
+                                <h3>Project Details</h3>
+                                <div class="project-meta-item">
+                                    <h4>Type</h4>
+                                    <p>Security Tool Development</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Duration</h4>
+                                    <p>6 months</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Role</h4>
+                                    <p>Lead Developer</p>
+                                </div>
+                                <div class="project-meta-item">
+                                    <h4>Completion</h4>
+                                    <p>2023</p>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-tech">
+                                <h3>Technologies</h3>
+                                <div class="project-tech-stack">
+                                    <span>Python</span>
+                                    <span>Docker</span>
+                                    <span>Flask</span>
+                                    <span>SQLAlchemy</span>
+                                    <span>OWASP ZAP API</span>
+                                    <span>Selenium</span>
+                                    <span>Nmap</span>
+                                    <span>Git</span>
+                                </div>
+                            </div>
+
+                            <div class="project-detail-links">
+                                <h3>Links</h3>
+                                <a href="#"><i class="fab fa-github"></i> View Source Code</a>
+                                <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                                <a href="#"><i class="fas fa-file-pdf"></i> Documentation</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Related Projects -->
+            <section class="project-related">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Related Projects</h2>
+                        <p>Explore more of my security tools and frameworks</p>
+                    </div>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-code"></i>
+                                    <h3>XSS Vulnerability Scanner</h3>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>XSS Vulnerability Scanner</h3>
+                                <p>Advanced tool for detecting Cross-Site Scripting vulnerabilities in web applications using context-aware analysis.</p>
+                                <a href="project-detail-xss.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+                        <div class="project-card">
+                            <div class="project-img">
+                                <div class="image-placeholder">
+                                    <i class="fas fa-database"></i>
+                                    <h3>SQL Injection Prevention Toolkit</h3>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>SQL Injection Prevention Toolkit</h3>
+                                <p>Comprehensive toolkit for detecting and preventing SQL injection vulnerabilities in web applications.</p>
+                                <a href="project-detail-sqli.html" class="btn btn-outline btn-sm">VIEW DETAILS</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>W7NX_Z</h3>
+                        <p>Professional cybersecurity services specializing in penetration testing, vulnerability assessment, and secure architecture design.</p>
+                        <div class="social-links">
+                            <a href="https://instagram.com/w7nx_z" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="https://linkedin.com/in/rudy-hacks" target="_blank"><i class="fab fa-linkedin"></i></a>
+                            <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="index.html">Home</a></li>
+                            <li><a href="about.html">About</a></li>
+                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="index.html#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Services</h3>
+                        <ul>
+                            <li>Penetration Testing</li>
+                            <li>Web App Security</li>
+                            <li>Network Security</li>
+                            <li>Vulnerability Assessment</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>© All Rights Reserved 2025 by rudyhacks</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 
